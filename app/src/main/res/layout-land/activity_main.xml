@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="horizontal"
+    tools:context="co.edu.udea.compumovil.gr8.lab1ui.MainActivity">
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/firstLayout"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameField"
+                android:hint="@string/personName"
+                android:imeOptions="actionNext"
+                android:inputType="textNoSuggestions|textCapWords"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lastNameField"
+                android:hint="@string/personLastName"
+                android:imeOptions="actionNext"
+                android:layout_below="@id/nameField"
+                android:inputType="textNoSuggestions|textCapWords"
+                />
+
+            <AutoCompleteTextView
+                android:id="@+id/countryNameField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lastNameField"
+                android:hint="@string/personCountry"
+                android:imeOptions="actionNext"
+                android:inputType="textAutoComplete"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phoneNumberField"
+                android:layout_below="@id/countryNameField"
+                android:hint="@string/personPhone"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/personAddressField"
+                android:layout_below="@id/phoneNumberField"
+                android:imeOptions="actionNext"
+                android:hint="@string/personAddress"
+                android:inputType="textNoSuggestions"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/personEmailField"
+                android:hint="@string/personEmail"
+                android:imeOptions="actionNext"
+                android:layout_below="@id/personAddressField"
+                android:inputType="textEmailAddress"
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioGroupGender"
+                android:orientation="horizontal"
+                android:layout_below="@id/personEmailField"
+
+                >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/personGenderMale"
+                    android:id="@+id/radioButtonMale"
+                    android:checked="true"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/personGenderFemale"
+                    android:id="@+id/radioButtonFemale"
+                    android:layout_toRightOf="@+id/radioButtonMale"
+                    />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hobbies "
+                android:id="@+id/hobbiesText"
+                android:layout_alignTop="@+id/hobbiesSpinner"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/radioGroupGender"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hobbiesSpinner"
+                android:layout_toRightOf="@+id/hobbiesText"
+                android:layout_below="@id/radioGroupGender"
+                >
+            </Spinner>
+
+            <DatePicker
+                android:datePickerMode="spinner"
+                android:layout_width="match_parent"
+                android:calendarViewShown="false"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hobbiesText"
+                android:id="@+id/datePicker1"
+                >
+
+            </DatePicker>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/favouriteCheckbox"
+                android:text="@string/addFavourite"
+                android:layout_below="@id/datePicker1"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:id="@+id/buttonsLayout"
+                >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dataButton"
+                    android:text="@string/showButton"
+                    android:onClick="showContactData"
+                    android:layout_centerHorizontal="true"
+
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/confirmButton"
+                    android:text="@string/confirmButton"
+                    android:onClick="confirmContactData"
+                    android:layout_below="@id/dataButton"
+                    android:layout_centerHorizontal="true"
+
+                    />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dataText"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/confirmButton"
+                />
+
+
+            </RelativeLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>
